@@ -20,7 +20,7 @@ http://participants-area.bioasq.org/general_information/Task13b/
 ## Data Acquisition
 The data acquisition process entails retrieving relevant articles from the Pubmed database. The steps for this include:
 1. Import the questions from the JSON file.
-2. Based on the question given, preprocess the query and extract the keywords/terms.
+2. Based on the question given, preprocess the query by extracting the keywords/terms.
 3. Using NCBI's eutils API, retrieve all relevant document IDs and their abstracts from Pubmed (i.e. documents that contains the keywords from Step 1).
 
 <br>
@@ -32,9 +32,8 @@ The data acquisition process entails retrieving relevant articles from the Pubme
 
 ## Retrieve a list of at most 10 relevant articles (Phase A)
 This process entails ranking the retrieved documents from the Data Acquisition process in terms of similarity to the question/query given. The steps for this include:
-1. Preprocess the query and the document abstracts (i.e. stopwords removal, lemmatization, spelling correction, capitalisation standardisation, special characters removal).
-2. Convert the query and document abstracts to vectors/embeddings.
-3. Calculate the cosine similarity between the query and each document abstract and rank the articles based on decreasing cosine similarity.
+1. Convert the query and document abstracts to vectors/embeddings.
+2. Calculate the cosine similarity between the query and each document abstract and rank the articles based on decreasing cosine similarity.
 
 ## Retrieve a list of at most 10 relevant text snippets (Phase A)
 This process entails ranking the sentences from the document's abstract in terms of most relevance to the question/query. The steps for this include:

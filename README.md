@@ -11,11 +11,24 @@ Group Members:
 Relevant Links:
 http://participants-area.bioasq.org/general_information/Task13b/
 
+## Instructions
+1. pip install -r requirements.txt
+2. python main.py
+
+---
+
 ## Data Acquisition
 The data acquisition process entails retrieving relevant articles from the Pubmed database. The steps for this include:
 1. Import the questions from the JSON file.
 2. Based on the question given, preprocess the query and extract the keywords/terms.
 3. Using NCBI's eutils API, retrieve all relevant document IDs and their abstracts from Pubmed (i.e. documents that contains the keywords from Step 1).
+
+<br>
+
+## Challenges faced
+1. Finding a suitable model to extract the keywords from the questions. We initially used spacy's NER models (e.g. en_ner_bc5cdr_md) and BioBERT model for biomedical terms. However, we discovered that for certain questions, no terms were being extracted from the question body.
+
+---
 
 ## Retrieve a list of at most 10 relevant articles (Phase A)
 This process entails ranking the retrieved documents from the Data Acquisition process in terms of similarity to the question/query given. The steps for this include:
@@ -33,3 +46,8 @@ This process entails ranking the sentences from the document's abstract in terms
 ## TO-DO
 1. Add logger
 2. Phase B
+3. Evaluation of our results (i.e. f score)
+
+## Other considerations
+1. Query expansion
+2. Unoptimised Question keyword extraction which leads to an insufficient number of relevant articles returned. Consider using LLM to extract the keywords

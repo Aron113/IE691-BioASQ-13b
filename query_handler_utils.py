@@ -57,5 +57,10 @@ def extract_keywords_bert(question):
 
     return extracted_keywords
 
+def prepare_snippets_for_gpt(snippets):
+    # Example: Combine the top 5 snippets into a single string for ChatGPT prompt
+    combined_snippets = " ".join([snippet['text'] for snippet in snippets[:5]])
+    return combined_snippets
+
 if __name__ == '__main__':
     pass

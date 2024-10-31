@@ -2,11 +2,20 @@ import config
 import query_handler_utils
 import search_utils
 import ranking_utils
+import openai_utils
 from sentence_transformers import SentenceTransformer, util
 import torch
+import json
+
+def save_results(results):
+    with open("phase_b_results.json", "w") as f:
+        json.dump({"questions": results}, f, indent=2)
+
 
 def run(file_path):
     questions = query_handler_utils.parse_json(file_path)
+    results = []
+
     for question in questions:
         question_body = question["body"]
         question_keywords = query_handler_utils.extract_keywords_spacy(question_body)
@@ -30,6 +39,21 @@ def run(file_path):
 
 
         ########### Phase B ###########
+        # Prepare snippets for ChatGPT
+        combined_snippets = query_handler_utils.prepare_snippets_for_gpt(snippet_list)
+        
+        # Generate the ideal answer using ChatGPT API
+        ideal_answer = openai_utils.generate_ideal_answer(question_body, combined_snippets)
+
+        # Collect results for Phase B
+        result = {
+            "id": question["id"],
+            "ideal_answer": ideal_answer
+        }
+        results.append(result)
+
+    # Save results in the required JSON format for submission
+    save_results(results)
 
     return
 

@@ -1,0 +1,28 @@
+{
+  "questions": [
+    {
+      "id": "55031181e9bde69634000014",
+      "ideal_answer": "Hirschsprung disease (HSCR) is considered a multifactorial disorder rather than a Mendelian disorder. While some identified genes are related to Mendelian syndromic forms of Hirschsprung's disease, the overall understanding is that HSCR is a multifactorial, non-Mendelian disorder. This means that the disease results from complex interactions between genetic and environmental factors, with rare high-penetrance coding sequence mutations in genes like the receptor tyrosine kinase RET contributing to risk in combination with mutations at other genes."
+    },
+    {
+      "id": "55046d5ff8aee20f27000007",
+      "ideal_answer": "The signaling molecules (ligands) that interact with the receptor EGFR (Epidermal Growth Factor Receptor) include epidermal growth factor (EGF) and transforming growth factor alpha (TGF-alpha). These ligands bind to EGFR, leading to the activation of downstream signaling pathways through the reversible nucleation of multicomponent complexes and tyrosine phosphorylation."
+    },
+    {
+      "id": "54e25eaaae9738404b000017",
+      "ideal_answer": "Yes, the protein Papilin is indeed secreted. Papilins are described as homologous, secreted extracellular matrix proteins in the provided snippets. They share a common order of protein domains and are known to be pericellular proteins with a homology to the ADAMTS metalloproteinases. Additionally, Papilins are specifically mentioned as extracellular matrix proteins in the text, indicating that they are secreted into the extracellular space."
+    },
+    {
+      "id": "535d292a9a4572de6f000003",
+      "ideal_answer": "Yes, long non-coding RNAs (lncRNAs) can be spliced. They are often products of alternative splicing and processing into smaller products. The molecular mechanisms underlying the development of lncRNAs, including their splicing, are incompletely understood. However, lncRNAs are known to play key regulatory roles in various cellular processes."
+    },
+    {
+      "id": "55262a9787ecba3764000009",
+      "ideal_answer": "Yes, RANKL (Receptor Activator of Nuclear Factor Kappa-B Ligand) is secreted by cells. The snippets mention RANKL-induced osteoclast formation, which implies that RANKL is released by certain cells to stimulate the differentiation and activation of osteoclasts. Additionally, the study discusses how RANKL induces the expression of specific genes and triggers signaling pathways in osteoclast precursors, ultimately leading to osteoclast formation."
+    },
+    {
+      "id": "51406e6223fec90375000009",
+      "ideal_answer": "No, metformin does not interfere with thyroxine (levothyroxine) absorption. While some drugs can impact the absorption and metabolism of thyroid hormones, metformin is not known to have this effect. Other medications like proton-pump inhibitors, antacids, estrogens, mitotane, fluorouracil, phenobarbital, and rifampin have been shown to affect thyroid hormone absorption and metabolism."
+    }
+  ]
+}

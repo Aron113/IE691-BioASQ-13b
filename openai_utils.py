@@ -12,6 +12,8 @@ def generate_ideal_answer(question_body, snippets):
         f"Question: {question_body}\n"
         f"Relevant snippets:\n{snippets}\n"
         "Please provide a concise and comprehensive answer to the question based on these snippets."
+        "Provide evidence-based, concise answers using the relevant snippets. "
+        "Cite relevant findings where appropriate."
     )
 
     

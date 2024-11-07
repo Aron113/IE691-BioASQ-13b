@@ -3,6 +3,12 @@ import config
 import time
 import tiktoken
 import random
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 
 # Create the client instance with the API key
 client = OpenAI(
@@ -18,7 +24,7 @@ def truncate_text(text, max_tokens, encoding_name='gpt-3.5-turbo'):
     return text
 
 def generate_ideal_answer(question_body, snippets):
-    max_prompt_tokens = 3500 #
+    max_prompt_tokens = 3500 #Adjust based on model's max context length, 4096 tokens for GPT-3.5-turbo
 
     # Truncate snippets to prevent exceeding token limits
     snippets_text = '\n'.join(snippets)
@@ -53,7 +59,7 @@ def generate_ideal_answer(question_body, snippets):
             return response.choices[0].message.content.strip()
         
         except (RateLimitError, APIError, Timeout, ServiceUnavailableError) as e:
-            wait_time = min(backoff_base ** attempt + random.uniform(0, 1), backoff_cap)
+            wait_time = (2 ** attempt) + random.uniform(0, 1)
             logger.warning(f"Error '{e}' on attempt {attempt + 1}. Retrying in {wait_time:.2f} seconds...")
             time.sleep(wait_time)
 

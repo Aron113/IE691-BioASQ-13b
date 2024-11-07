@@ -1,17 +1,37 @@
-from openai import OpenAI, RateLimitError
+from openai import OpenAI, RateLimitError, APIError, Timeout, ServiceUnavailableError
 import config
 import time
+import tiktoken
+import random
 
 # Create the client instance with the API key
 client = OpenAI(
     api_key=config.OPENAI_API_KEY,
     )
 
+def truncate_text(text, max_tokens, encoding_name='gpt-3.5-turbo'):
+    encoding = tiktoken.encoding_for_model(encoding_name)
+    tokens = encoding.encode(text)
+    if len(tokens) > max_tokens:
+        tokens = tokens[:max_tokens]
+        text = encoding.decode(tokens)
+    return text
+
 def generate_ideal_answer(question_body, snippets):
+    max_prompt_tokens = 3500 #
+
+    # Truncate snippets to prevent exceeding token limits
+    snippets_text = '\n'.join(snippets)
+    snippets_text = truncate_text(snippets_text,max_prompt_tokens)
+
     prompt = (
         f"Question: {question_body}\n"
         f"Relevant snippets:\n{snippets}\n"
         "Please provide a concise and comprehensive answer to the question based on these snippets."
+    )
+
+    system_prompt = (
+        "You are a knowledgeable assistant specializing in biomedical questions."
         "Provide evidence-based, concise answers using the relevant snippets. "
         "Cite relevant findings where appropriate."
     )
@@ -23,7 +43,7 @@ def generate_ideal_answer(question_body, snippets):
             response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
-                    {"role": "system", "content": "You are a knowledgeable assistant for biomedical questions."},
+                    {"role": "system", "content": system_prompt},
                     {"role": "user", "content": prompt}
                 ],
                 max_tokens=config.GPT_MAX_TOKENS,
@@ -32,10 +52,15 @@ def generate_ideal_answer(question_body, snippets):
             
             return response.choices[0].message.content.strip()
         
-        except RateLimitError:
-            # Handle rate limit exceeded by waiting before retrying
-            print(f"Rate limit exceeded on attempt {attempt + 1}. Retrying in 20 seconds...")
-            time.sleep(20)  # Wait 20 seconds before retrying
+        except (RateLimitError, APIError, Timeout, ServiceUnavailableError) as e:
+            wait_time = min(backoff_base ** attempt + random.uniform(0, 1), backoff_cap)
+            logger.warning(f"Error '{e}' on attempt {attempt + 1}. Retrying in {wait_time:.2f} seconds...")
+            time.sleep(wait_time)
+
+        except Exception as e:
+            # Handle unexpected exceptions
+            logger.error(f"Unexpected error: {e}")
+            raise e
 
     # If all attempts fail, raise an exception
-    raise Exception("Failed to generate answer after multiple attempts due to rate limits.")
+    raise Exception("Failed to generate answer after multiple attempts due to API errors.")

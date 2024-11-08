@@ -7,7 +7,7 @@ import torch
 
 def parse_json(file_path):
     with open(file_path, 'r') as file:
-        data = json.load(file)["questions"][:6] #Remove the slicing
+        data = json.load(file)["questions"]
     return data
 
 def extract_keywords_spacy(question):
@@ -56,6 +56,53 @@ def extract_keywords_bert(question):
     extracted_keywords = [(res['word'], res['entity_group']) for res in results]
 
     return extracted_keywords
+
+def identify_question_type(question): #Rule-based classificiation to identify the type of biomedical question (factoid, list, yes/no, summary).
+    
+    question_lower = question.lower()
+    
+    # Pattern matching for different question types
+    if any(word in question_lower for word in ['what', 'which', 'who', 'where', 'when']):
+        if re.search(r'list|name|mention|identify', question_lower):
+            return 'list'
+        return 'factoid'
+    elif question_lower.startswith(('is', 'are', 'does', 'do', 'can', 'could', 'will', 'would')):
+        return 'yes_no'
+    elif any(word in question_lower for word in ['how', 'explain', 'describe', 'why']):
+        return 'summary'
+    return 'summary'  # Default to summary for complex questions
+
+def extract_exact_answer(question, snippets, question_type):
+    
+    nlp = spacy.load("en_core_sci_lg")
+    
+    if question_type == 'yes_no':
+        # Implement yes/no classification based on snippets
+        positive_indicators = sum(1 for s in snippets if any(pos in s.lower() 
+                                for pos in ['confirm', 'prove', 'demonstrate', 'show', 'indicate']))
+        negative_indicators = sum(1 for s in snippets if any(neg in s.lower() 
+                                for neg in ['deny', 'refute', 'disprove', 'reject']))
+        return 'Yes' if positive_indicators > negative_indicators else 'No'
+    
+    elif question_type in ['factoid', 'list']:
+        # Extract named entities relevant to the question
+        question_doc = nlp(question)
+        question_entities = set(ent.label_ for ent in question_doc.ents)
+        
+        answers = []
+        for snippet in snippets:
+            doc = nlp(snippet)
+            for ent in doc.ents:
+                # Match entity types with question focus
+                if ent.label_ in question_entities:
+                    answers.append(ent.text)
+        
+        if question_type == 'factoid':
+            return answers[0] if answers else "No exact answer found"
+        else:  # list type
+            return "; ".join(set(answers)) if answers else "No exact answers found"
+    
+    return "Question requires detailed explanation"
 
 def prepare_snippets_for_gpt(snippets):
     # Example: Combine the top 5 snippets into a single string for ChatGPT prompt

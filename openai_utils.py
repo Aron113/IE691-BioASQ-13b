@@ -23,7 +23,7 @@ def truncate_text(text, max_tokens, encoding_name='gpt-3.5-turbo'):
         text = encoding.decode(tokens)
     return text
 
-def generate_ideal_answer(question_body, snippets):
+def generate_ideal_answer(question_body, snippets, question_type):
     max_prompt_tokens = 3500 #Adjust based on model's max context length, 4096 tokens for GPT-3.5-turbo
 
     # Truncate snippets to prevent exceeding token limits
@@ -31,6 +31,7 @@ def generate_ideal_answer(question_body, snippets):
     snippets_text = truncate_text(snippets_text,max_prompt_tokens)
 
     prompt = (
+        f"Question Type: {question_type}\n"
         f"Question: {question_body}\n"
         f"Relevant snippets:\n{snippets}\n"
         "Please provide a concise and comprehensive answer to the question based on these snippets."
@@ -70,3 +71,35 @@ def generate_ideal_answer(question_body, snippets):
 
     # If all attempts fail, raise an exception
     raise Exception("Failed to generate answer after multiple attempts due to API errors.")
+
+def generate_exact_answer(question, snippets, question_type):
+    
+    system_prompt = (
+        "You are a specialized biomedical question answering system. "
+        "For factoid questions, provide only the specific entity or value asked for. "
+        "For list questions, provide a semicolon-separated list of unique items. "
+        "For yes/no questions, respond only with 'Yes' or 'No'. "
+        "For summary questions, indicate that an exact answer is not appropriate."
+    )
+    
+    prompt = (
+        f"Question Type: {question_type}\n"
+        f"Question: {question}\n"
+        f"Relevant snippets:\n{snippets}\n"
+        "Provide the exact answer based on the question type and evidence."
+    )
+    
+    try:
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=100,  # Shorter for exact answers
+            temperature=0.3  # Lower temperature for more focused answers
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        logger.error(f"Error generating exact answer: {e}")
+        return "Error generating exact answer"

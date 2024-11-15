@@ -3,6 +3,7 @@ import query_handler_utils
 import search_utils
 import ranking_utils
 import openai_utils
+import evaluation_utils
 from sentence_transformers import SentenceTransformer, util
 import torch
 import json
@@ -54,6 +55,7 @@ def run(file_path):
 
     # Save results in the required JSON format for submission
     save_results(results)
+    phase_b_evaluation = evaluation_utils.evaluate_generated_ideal_answers(results, file_path)
 
     return
 

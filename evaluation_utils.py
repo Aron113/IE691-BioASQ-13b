@@ -1,6 +1,18 @@
 from rouge_score import rouge_scorer
 from bert_score import score
+from sklearn.metrics import ndcg_score
 import json
+import numpy as np
+import pytrec_eval
+import re
+
+def calc_precision(top10_articles, question_ideal_articles, training_data_path):
+    qrel = {"query": {re.search(r'/pubmed/(\d+)', article_url).group(1): 1 for article_url in question_ideal_articles}}
+    run = {"query": {article["pmid"] : 1 for article in top10_articles}}
+
+    evaluator = pytrec_eval.RelevanceEvaluator(qrel, {'P.10'})
+    results = evaluator.evaluate(run)
+    return results
 
 def load_training_ideal_answers(training_data_path):
     with open(training_data_path, "r") as f:

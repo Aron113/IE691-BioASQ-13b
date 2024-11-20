@@ -103,3 +103,6 @@ def generate_exact_answer(question, snippets, question_type):
     except Exception as e:
         logger.error(f"Error generating exact answer: {e}")
         return "Error generating exact answer"
+    
+if __name__ == "__main__":
+    pass

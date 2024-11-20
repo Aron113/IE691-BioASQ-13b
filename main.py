@@ -16,6 +16,8 @@ def save_results(results):
 def run(file_path):
     questions = query_handler_utils.parse_json(file_path)
     results = []
+    total_precision = 0
+    num_questions = 0
 
     for question in questions:
         question_body = question["body"]
@@ -28,12 +30,20 @@ def run(file_path):
 
         #Get the pmid, title and abstract of the relevant articles in the form of a list
         article_info_list = search_utils.ncbi_title_abstract_query(pmid_list)
+        if not article_info_list:
+            print(f"No articles for {question['id']}")
+            continue
 
         ########### Phase A ###########
         #Rank the articles on decreasing relevance to the question/query
         model = SentenceTransformer("all-MiniLM-L6-v2")
+        question_ideal_articles = question["documents"]
+
         articles_ranked_list = ranking_utils.rank_abstract(article_info_list, question_body, model)
-        top10_articles = articles_ranked_list[:11]
+        top10_articles = articles_ranked_list[:10]
+        eval_results = evaluation_utils.calc_precision(top10_articles, question_ideal_articles, training_data_path)
+        print([ article["pmid"] for article in top10_articles])
+        print(eval_results)
 
         #From the top 10 articles, find the most relevant snippet in each article's abstract
         snippet_list = ranking_utils.rank_snippet(top10_articles, question_body, model)

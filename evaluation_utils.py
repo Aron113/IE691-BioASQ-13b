@@ -23,6 +23,20 @@ def compute_rouge_scores(training_ideal_answer, generated_ideal_answer):
     scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
     return scorer.score(training_ideal_answer, generated_ideal_answer)
 
+def compute_bert_score_single(training_ideal_answer, generated_ideal_answer):
+    
+    refs = [training_ideal_answer]
+    cands = [generated_ideal_answer]
+    
+    # Compute BERT score
+    P, R, F1 = score(cands, refs, lang="en", rescale_with_baseline=True)
+    
+    return {
+        "precision": P.item(),
+        "recall": R.item(),
+        "f1": F1.item(),
+    }
+
 def compute_bert_scores(training_ideal_answers, generated_ideal_answers):
     P, R, F1 = score(generated_ideal_answers, training_ideal_answers, lang="en", rescale_with_baseline=True)
     return {

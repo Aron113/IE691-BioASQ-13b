@@ -7,6 +7,7 @@ import evaluation_utils
 from sentence_transformers import SentenceTransformer, util
 import torch
 import json
+import re
 
 def save_results(results):
     with open("phase_b_results.json", "w") as f:
@@ -25,10 +26,13 @@ def run(file_path):
         question_id = question["id"]
         question_keywords = query_handler_utils.extract_keywords_spacy(question_body)
         question_keywords = [i[0] for i in question_keywords]
+        print(question_keywords)
         
         #Search NCBI for relevant articles
         query_term = search_utils.ncbi_querybuilder(question_keywords)
         pmid_list = search_utils.ncbi_query(config.NCBI_RETMAX, query_term, config.MIN_DATE, config.MAX_DATE)
+        full_list_pmids = [item for item in pmid_list] #RET_MAX
+
 
         #Get the pmid, title and abstract of the relevant articles in the form of a list
         article_info_list = search_utils.ncbi_title_abstract_query(pmid_list)
@@ -40,6 +44,14 @@ def run(file_path):
         #Rank the articles on decreasing relevance to the question/query
         model = SentenceTransformer("all-MiniLM-L6-v2")
         question_ideal_articles = question["documents"]
+
+        i = 0
+        for article_url in question_ideal_articles:
+            pmid_article = re.search(r'/pubmed/(\d+)', article_url).group(1)
+            if pmid_article in full_list_pmids:
+                i+=1
+        print("Number of relevant articles in full list: ", i, " / ", len(question_ideal_articles))        
+
 
         articles_ranked_list = ranking_utils.rank_abstract(article_info_list, question_body, model)
         top10_articles = articles_ranked_list[:10]

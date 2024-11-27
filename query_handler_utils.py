@@ -3,6 +3,8 @@ import spacy
 from transformers import AutoModelForTokenClassification, AutoTokenizer, AutoModel
 from transformers import pipeline
 import torch
+from openai import OpenAI
+import config
 
 
 def parse_json(file_path):
@@ -56,6 +58,58 @@ def extract_keywords_bert(question):
     extracted_keywords = [(res['word'], res['entity_group']) for res in results]
 
     return extracted_keywords
+
+def extract_keywords_gpt(question, api_key=config.OPENAI_API_KEY, model="gpt-4"):
+    """
+    Extracts key biomedical terms from a question using OpenAI's GPT API.
+    
+    Args:
+        question (str): The input question.
+        api_key (str): OpenAI API key.
+        model (str): The GPT model to use (default is 'gpt-4').
+        
+    Returns:
+        list: Extracted keywords.
+    """
+
+    # Define the prompt for the model
+    prompt = f"""
+    Extract the key terms from the following question:
+    "{question}"
+
+    These terms will be used in an API request to NCBI's Pubmed library to retrieve relevant articles
+    so be sure to extract the relevant biomedical terms and questions terms.
+    
+    Provide the terms as a JSON array.
+    """
+
+
+    try:
+        
+        client = OpenAI(
+            api_key= api_key,  # This is the default and can be omitted
+        )
+
+        response = client.chat.completions.create(
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt,
+                }
+            ],
+            model="gpt-4o",
+    )
+        
+        # Extract the content from the response
+        print(response)
+        keywords_content = response.choices[0].message.content
+        if keywords_content.startswith("```json") and keywords_content.endswith("```"):
+            keywords_content = keywords_content[7:-3].strip()  # Remove ```json and ``` markers
+        print(json.loads(keywords_content))
+        return [(keyword, 1) for keyword in json.loads(keywords_content)]
+    except Exception as e:
+        print(f"Error: {e}")
+        return []
 
 def identify_question_type(question): #Rule-based classificiation to identify the type of biomedical question (factoid, list, yes/no, summary).
     

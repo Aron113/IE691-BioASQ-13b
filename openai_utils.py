@@ -1,4 +1,4 @@
-from openai import OpenAI, RateLimitError, APIError, Timeout, ServiceUnavailableError
+from openai import OpenAI, RateLimitError, APIError, Timeout
 import config
 import time
 import tiktoken
@@ -23,7 +23,7 @@ def truncate_text(text, max_tokens, encoding_name='gpt-3.5-turbo'):
         text = encoding.decode(tokens)
     return text
 
-def generate_ideal_answer(question_body, snippets, question_type):
+def generate_ideal_answer(question_body, snippets):
     max_prompt_tokens = 3500 #Adjust based on model's max context length, 4096 tokens for GPT-3.5-turbo
 
     # Truncate snippets to prevent exceeding token limits
@@ -31,7 +31,6 @@ def generate_ideal_answer(question_body, snippets, question_type):
     snippets_text = truncate_text(snippets_text,max_prompt_tokens)
 
     prompt = (
-        f"Question Type: {question_type}\n"
         f"Question: {question_body}\n"
         f"Relevant snippets:\n{snippets}\n"
         "Please provide a concise and comprehensive answer to the question based on these snippets."
@@ -59,7 +58,7 @@ def generate_ideal_answer(question_body, snippets, question_type):
             
             return response.choices[0].message.content.strip()
         
-        except (RateLimitError, APIError, Timeout, ServiceUnavailableError) as e:
+        except (RateLimitError, APIError, Timeout) as e:
             wait_time = (2 ** attempt) + random.uniform(0, 1)
             logger.warning(f"Error '{e}' on attempt {attempt + 1}. Retrying in {wait_time:.2f} seconds...")
             time.sleep(wait_time)

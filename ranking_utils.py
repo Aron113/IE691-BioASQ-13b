@@ -41,25 +41,20 @@ def rank_snippet(top10_articles, question_body, model):
             query_embedding = model.encode(question_body, normalize_embeddings=True)
             corpus_embeddings = model.encode(abstract_sentences, normalize_embeddings=True)
             dot_scores = util.dot_score(query_embedding, corpus_embeddings)[0]
-            top_results = torch.topk(dot_scores, k=3) #Get the top 3 sentences
-            snippet_str = abstract_sentences[top_results[1][0]] #Get the most similar sentence/snippet
-
-            #Get info about snippet (i.e. starting and ending indices of the snippet in the abstract)
-            # Each snippet will be represented by the unique identifier of the article it comes from, 
-            # the identifier of the section the snippet starts in, 
-            # the offset of the first character of the snippet in the section the snippet starts in, 
-            # the identifier of the section the snippet ends in, 
-            # and the offset of the last character of the snippet in the section the snippet ends in. 
-            # The snippets themselves will also have to be returned (as strings).
-            section, start, end = find_snippet_location(article, snippet_str)
-            snip = {}
-            snip['pmid'] = article['pmid']
-            snip['offsetInBeginSection'] = start
-            snip['offsetInEndSection'] = end
-            snip['beginSection'] = section
-            snip['endSection'] = section
-            snip['text'] = snippet_str
-            snippet_list.append(snip)
+            top_results = torch.topk(dot_scores, k=min(3, len(dot_scores))) # Get up to 3 sentences
+            if top_results.indices.size(0) > 0:  # Ensure there are valid results
+                snippet_str = abstract_sentences[top_results.indices[0]] # Get the most similar sentence/snippet
+                # Continue processing the snippet
+                section, start, end = find_snippet_location(article, snippet_str)
+                snip = {
+                    'pmid': article['pmid'],
+                    'offsetInBeginSection': start,
+                    'offsetInEndSection': end,
+                    'beginSection': section,
+                    'endSection': section,
+                    'text': snippet_str
+                 }
+                snippet_list.append(snip)
             
     return snippet_list
 

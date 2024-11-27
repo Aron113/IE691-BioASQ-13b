@@ -61,6 +61,7 @@ def run(file_path):
             "id": question["id"],
             "ideal_answer": ideal_answer
         }
+        print(result)
         results.append(result)
 
     # Save results in the required JSON format for submission

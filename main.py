@@ -4,96 +4,149 @@ import search_utils
 import ranking_utils
 import openai_utils
 import evaluation_utils
-from sentence_transformers import SentenceTransformer, util
-import torch
+from sentence_transformers import SentenceTransformer
 import json
 import re
 
-def save_results(results):
-    with open("phase_b_results.json", "w") as f:
+
+def save_results(results, output_file="results.json"):
+    """
+    Saves the results in a JSON file.
+    """
+    with open(output_file, "w") as f:
         json.dump({"questions": results}, f, indent=2)
 
 
-def run(file_path):
+def run_baseline(file_path):
+    """
+    Runs the baseline pipeline for question answering.
+    """
     questions = query_handler_utils.parse_json(file_path)
     results = []
     ground_truth_ideal_answers = evaluation_utils.load_training_ideal_answers(file_path)
-    total_precision = 0
-    num_questions = 0
+
+    for question in questions[:10]:  # Limit to 10 questions for testing
+        question_body = question["body"]
+        question_id = question["id"]
+
+        # Step 1: Keyword Extraction
+        keywords = query_handler_utils.extract_keywords_baseline(question_body)
+
+        # Step 2: Query Construction and Article Retrieval
+        query_term = search_utils.construct_query_baseline(keywords)
+        pmid_list = search_utils.ncbi_query(config.NCBI_RETMAX, query_term, config.MIN_DATE, config.MAX_DATE)
+        articles = search_utils.ncbi_title_abstract_query(pmid_list)
+
+        if not articles:
+            print(f"No articles found for question {question_id}")
+            continue
+
+        # Step 3: Snippet Selection
+        snippets = ranking_utils.select_snippets_baseline(articles, keywords)
+
+        # Step 4: Generate Baseline Answer
+        combined_snippets = ' '.join(snippets[:config.BASELINE_TOP_SNIPPETS])
+        generated_answer = combined_snippets
+
+        # Step 5: Evaluate Generated Answer
+        ground_truth_answer = ground_truth_ideal_answers.get(question_id, [""])[0]
+        rouge_score = evaluation_utils.compute_rouge_scores(ground_truth_answer, generated_answer)
+        bert_score = evaluation_utils.compute_bert_score_single(ground_truth_answer, generated_answer)
+
+        # Add results to the output
+        result = {
+            "id": question_id,
+            "question": question_body,
+            "generated_answer": generated_answer,
+            "rouge_score": rouge_score,
+            "bert_score": bert_score,
+        }
+
+        results.append(result)
+        print(f"Question ID: {question_id}, ROUGE Score: {rouge_score}, BERT Score: {bert_score}")
+
+    # Save results for baseline
+    save_results(results, output_file="baseline_results.json")
+
+
+def run_advanced(file_path):
+    """
+    Runs the advanced pipeline for question answering, including snippet ranking and GPT-generated answers.
+    """
+    questions = query_handler_utils.parse_json(file_path)
+    results = []
+    ground_truth_ideal_answers = evaluation_utils.load_training_ideal_answers(file_path)
 
     for question in questions:
         question_body = question["body"]
         question_id = question["id"]
+        question_type = question.get("type","ideal")
+
+        # Step 1: Keyword Extraction
         question_keywords = query_handler_utils.extract_keywords_spacy(question_body)
         question_keywords = [i[0] for i in question_keywords]
-        print(question_keywords)
-        
-        #Search NCBI for relevant articles
+        print(f"Extracted Keywords: {question_keywords}")
+
+        # Step 2: Query Construction and Article Retrieval
         query_term = search_utils.ncbi_querybuilder(question_keywords)
         pmid_list = search_utils.ncbi_query(config.NCBI_RETMAX, query_term, config.MIN_DATE, config.MAX_DATE)
-        full_list_pmids = [item for item in pmid_list] #RET_MAX
-
-
-        #Get the pmid, title and abstract of the relevant articles in the form of a list
         article_info_list = search_utils.ncbi_title_abstract_query(pmid_list)
         if not article_info_list:
-            print(f"No articles for {question['id']}")
+            print(f"No articles found for question {question_id}")
             continue
 
-        ########### Phase A ###########
-        #Rank the articles on decreasing relevance to the question/query
+        # Step 3: Article Ranking
         model = SentenceTransformer("all-MiniLM-L6-v2")
-        question_ideal_articles = question["documents"]
-
-        i = 0
-        for article_url in question_ideal_articles:
-            pmid_article = re.search(r'/pubmed/(\d+)', article_url).group(1)
-            if pmid_article in full_list_pmids:
-                i+=1
-        print("Number of relevant articles in full list: ", i, " / ", len(question_ideal_articles))        
-
-
         articles_ranked_list = ranking_utils.rank_abstract(article_info_list, question_body, model)
         top10_articles = articles_ranked_list[:10]
+
+        # Precision Evaluation for Top Articles
+        question_ideal_articles = question.get("documents", [])
         eval_results = evaluation_utils.calc_precision(top10_articles, question_ideal_articles, file_path)
-        print(f"Top 10 Articles for Question {question_id}: {[article['pmid'] for article in top10_articles]}")
         print(f"Precision@10 for Question {question_id}: {eval_results}")
 
-        #From the top 10 articles, find the most relevant snippet in each article's abstract
+        # Step 4: Snippet Ranking
         snippet_list = ranking_utils.rank_snippet(top10_articles, question_body, model)
 
-
-        ########### Phase B ###########
-        # Prepare snippets for ChatGPT
+        # Step 5: Generate Ideal Answer using GPT
         combined_snippets = query_handler_utils.prepare_snippets_for_gpt(snippet_list)
-        
-        # Generate the ideal answer using ChatGPT API
-        ideal_answer = openai_utils.generate_ideal_answer(question_body, combined_snippets)
+        if question_type in ["factoid", "yesno", "list"]:
+            generated_answer = openai_utils.generate_exact_answer(question_body, combined_snippets, question_type)
+        else:
+            generated_answer = openai_utils.generate_ideal_answer(question_body, combined_snippets)
 
-        # Collect results for Phase B
+        # Collect Results for Advanced Pipeline
         result = {
             "id": question["id"],
+            "type": question["type"],
             "question": question["body"],
-            "ideal_answer": ideal_answer
+            "generated_answer": generated_answer
         }
-        print(result)
+        print(f"Question: {question_body}, Type: {question_type}")
+        print(f"Generated Answer for Question {question_id}: {generated_answer}")
 
-        # Evaluate the generated ideal answer
+        # Step 6: Evaluate Generated Answer
         ground_truth_answer = ground_truth_ideal_answers.get(question_id, [""])[0]
-        rouge_score = evaluation_utils.compute_rouge_scores(ground_truth_answer, ideal_answer)
-        bert_score = evaluation_utils.compute_bert_score_single(ground_truth_answer, ideal_answer)
+        rouge_score = evaluation_utils.compute_rouge_scores(ground_truth_answer, generated_answer)
+        bert_score = evaluation_utils.compute_bert_score_single(ground_truth_answer, generated_answer)
         print(f"ROUGE Scores for Question {question_id}: {rouge_score}")
         print(f"BERT Scores for Question {question_id}: {bert_score}")
 
         results.append(result)
 
-    # Save results in the required JSON format for submission
-    save_results(results)
+    # Save results for advanced pipeline
+    save_results(results, output_file="advanced_results.json")
     phase_b_evaluation = evaluation_utils.evaluate_generated_ideal_answers(results, file_path)
     print(f"Phase B Evaluation: {phase_b_evaluation}")
 
-    return
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     training_data_path = config.TRAINING_DATA_PATH
-    run(training_data_path)
+
+    # Run Baseline Model
+    print("Running Baseline Pipeline...")
+    run_baseline(training_data_path)
+
+    # Run Advanced Model
+    print("Running Advanced Pipeline...")
+    run_advanced(training_data_path)

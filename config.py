@@ -11,3 +11,5 @@ MAX_DATE = '2025/01/01'
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 GPT_MAX_TOKENS = 300  # Set to the desired max tokens for ChatGPT responses
 GPT_TEMPERATURE = 0.5  # Adjust temperature to control response creativity
+
+BASELINE_TOP_SNIPPETS = 5  # Number of snippets to include in the generated answer

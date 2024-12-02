@@ -76,7 +76,7 @@ def generate_exact_answer(question, snippets, question_type):
     system_prompt = (
         "You are a specialized biomedical question answering system. "
         "For factoid questions, provide only the specific entity or value asked for. "
-        "For list questions, provide a semicolon-separated list of unique items. "
+        "For list questions, provide the items in the following format: each item should be enclosed in individual square brackets, all within a larger list, e.g., [[\"item1\"], [\"item2\"], [\"item3\"]]. "
         "For yes/no questions, respond only with 'Yes' or 'No'. "
         "For summary questions, indicate that an exact answer is not appropriate."
     )

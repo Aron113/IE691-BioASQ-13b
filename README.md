@@ -42,10 +42,6 @@ This process entails ranking the sentences from the document's abstract in terms
 3. Convert the query and document abstracts to vectors/embeddings.
 4. Calculate the dot product between the query and each document and rank the articles based on decreasing dot score. (We use dot product for finding the most relevant text snippets as we want the snippets that contain the most amount of relevant information i.e. vectors of higher magnitude).
 
-## TO-DO
-1. Add logger
-2. Phase B
-3. Evaluation of our results (i.e. f score)
 
 ## Other considerations
 1. Query expansion

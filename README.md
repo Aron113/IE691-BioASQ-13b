@@ -12,8 +12,10 @@ Relevant Links:
 http://participants-area.bioasq.org/general_information/Task13b/
 
 ## Instructions
-1. pip install -r requirements.txt
-2. python main.py
+```bash
+pip install -r requirements.txt
+python main.py
+```
 
 ---
 

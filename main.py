@@ -76,8 +76,12 @@ def run_advanced(file_path):
     questions = query_handler_utils.parse_json(file_path)
     results = []
     ground_truth_ideal_answers = evaluation_utils.load_training_ideal_answers(file_path)
+    num_qns = 0
+    total_precision = 0
 
     for question in questions:
+        num_qns += 1
+        
         question_body = question["body"]
         question_id = question["id"]
         question_type = question.get("type","ideal")
@@ -104,6 +108,10 @@ def run_advanced(file_path):
         question_ideal_articles = question.get("documents", [])
         eval_results = evaluation_utils.calc_precision(top10_articles, question_ideal_articles, file_path)
         print(f"Precision@10 for Question {question_id}: {eval_results}")
+
+        total_precision += eval_results
+        average_precision = total_precision / num_qns
+        print(f"Average Precision: {average_precision} , Number of Questions: {num_qns}")
 
         # Step 4: Snippet Ranking
         snippet_list = ranking_utils.rank_snippet(top10_articles, question_body, model)

@@ -16,6 +16,7 @@ http://participants-area.bioasq.org/general_information/Task13b/
 pip install -r requirements.txt
 python main.py
 ```
+The results for the baseline model will be stored as the "baseline_results.json" file. The results for the advanced model will be stored as the "advanced_results.json" file.
 
 ---
 

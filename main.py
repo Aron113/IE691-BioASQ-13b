@@ -76,6 +76,8 @@ def run_advanced(file_path):
     questions = query_handler_utils.parse_json(file_path)
     results = []
     ground_truth_ideal_answers = evaluation_utils.load_training_ideal_answers(file_path)
+    ground_truth_exact_answers = evaluation_utils.load_training_exact_answers(file_path)
+    exact_results = []
     num_qns = 0
     total_precision = 0
 
@@ -141,11 +143,16 @@ def run_advanced(file_path):
         print(f"BERT Scores for Question {question_id}: {bert_score}")
 
         results.append(result)
+        if question_type in ["factoid", "yesno", "list"]:
+            exact_results.append(result)
 
     # Save results for advanced pipeline
     save_results(results, output_file="advanced_results.json")
     phase_b_evaluation = evaluation_utils.evaluate_generated_ideal_answers(results, file_path)
     print(f"Phase B Evaluation: {phase_b_evaluation}")
+
+    phase_b_exact_evaluation = evaluation_utils.evaluate_generated_exact_answers(exact_results, file_path)
+    print(f"Exact Answer Accuracy: {phase_b_exact_evaluation}")
 
 
 if __name__ == "__main__":

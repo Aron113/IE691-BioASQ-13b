@@ -19,6 +19,11 @@ def load_training_ideal_answers(training_data_path):
         data = json.load(f)
     return {item["id"]: item["ideal_answer"] for item in data["questions"]}
 
+def load_training_exact_answers(training_data_path):
+    with open(training_data_path, "r") as f:
+        data = json.load(f)
+    return {item["id"]: item["exact_answer"] for item in data["questions"] if item["type"] in ["factoid", "yesno", "list"]}
+
 def compute_rouge_scores(training_ideal_answer, generated_ideal_answer):
     scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
     return scorer.score(training_ideal_answer, generated_ideal_answer)
@@ -89,3 +94,22 @@ def evaluate_generated_ideal_answers(generated_data, training_data_path):
         "average_rouge": average_rouge,
         "average_bert": bert_score_avg
     }
+
+def evaluate_generated_exact_answers(generated_data, training_data_path):
+    generated_exact_answers = {item["id"]: item["generated_answer"] for item in generated_data}
+    training_exact_answers = load_training_exact_answers(training_data_path)
+    
+    numerator, denominator = 0, 0
+
+    for question_id, generated_exact_answer in generated_exact_answers.items():
+        training_exact_answer = training_exact_answers.get(question_id, "")[0]
+        
+        # ROUGE scores
+        print(training_exact_answer)
+        print(generated_exact_answer)
+        if training_exact_answer == generated_exact_answer:
+            numerator += 1
+        denominator += 1
+    
+    if not denominator:
+        return 0

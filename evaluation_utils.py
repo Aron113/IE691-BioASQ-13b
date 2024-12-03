@@ -46,7 +46,7 @@ def compute_bert_scores(training_ideal_answers, generated_ideal_answers):
     }
 
 def evaluate_generated_ideal_answers(generated_data, training_data_path):
-    generated_ideal_answers = {item["id"]: item["ideal_answer"] for item in generated_data["questions"]}
+    generated_ideal_answers = {item["id"]: item["generated_answer"] for item in generated_data}
     training_ideal_answers = load_training_ideal_answers(training_data_path)
     
     rouge_scores = []

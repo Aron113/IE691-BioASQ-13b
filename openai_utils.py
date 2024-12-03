@@ -95,8 +95,8 @@ def generate_exact_answer(question, snippets, question_type):
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": prompt}
             ],
-            max_tokens=100,  # Shorter for exact answers
-            temperature=0.3  # Lower temperature for more focused answers
+            max_tokens=config.GPT_MAX_TOKENS,
+            temperature=config.GPT_TEMPERATURE
         )
         return response.choices[0].message.content.strip()
     except Exception as e:

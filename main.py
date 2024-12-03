@@ -111,7 +111,7 @@ def run_advanced(file_path):
         eval_results = evaluation_utils.calc_precision(top10_articles, question_ideal_articles, file_path)
         print(f"Precision@10 for Question {question_id}: {eval_results}")
 
-        total_precision += eval_results
+        total_precision += eval_results["query"]["P.10"]
         average_precision = total_precision / num_qns
         print(f"Average Precision: {average_precision} , Number of Questions: {num_qns}")
 

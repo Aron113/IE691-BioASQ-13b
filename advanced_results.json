@@ -4,37 +4,37 @@
       "id": "55031181e9bde69634000014",
       "type": "summary",
       "question": "Is Hirschsprung disease a mendelian or a multifactorial disorder?",
-      "generated_answer": "Hirschsprung disease (HSCR) is considered a multifactorial disorder rather than a Mendelian disorder. While some identified genes are related to Mendelian syndromic forms of Hirschsprung's disease, HSCR is characterized by complex inheritance patterns and interactions between genetic and environmental factors. Rare high-penetrance coding sequence mutations in genes like RET contribute to the risk of HSCR in combination with mutations at other genes, highlighting the multifactorial nature of the disease."
+      "generated_answer": "Hirschsprung disease is considered a multifactorial disorder rather than a Mendelian disorder. While some identified genes are related to Mendelian syndromic forms of the disease, Hirschsprung disease is characterized by complex inheritance patterns involving interactions between genetic and environmental factors. The presence of rare high-penetrance coding sequence mutations in genes like RET can contribute to the risk of Hirschsprung disease in combination with mutations at other genes, highlighting its multifactorial nature."
     },
     {
       "id": "55046d5ff8aee20f27000007",
       "type": "list",
       "question": "List signaling molecules (ligands) that interact with the receptor EGFR?",
-      "generated_answer": "[[\"EGF (Epidermal Growth Factor)\"], [\"TGF-alpha (Transforming Growth Factor-alpha)\"], [\"HB-EGF (Heparin-binding EGF-like growth factor)\"], [\"BTC (Betacellulin)\"], [\"Epiregulin\"]]"
+      "generated_answer": "[[\"EGF (epidermal growth factor)\"], [\"TGF-alpha (transforming growth factor alpha)\"], [\"HB-EGF (heparin-binding EGF-like growth factor)\"], [\"AR (amphiregulin)\"], [\"Epiregulin\"], [\"Epigen\"], [\"BTC (betacellulin)\"], [\"EPR (epiregulin)\"], [\"Nrg1 (neuregulin 1)\"], [\"Nrg2 (neuregulin 2)\"], [\"Nrg3 (neuregulin 3)\"], [\"Nrg4 (neuregulin 4)\"], [\"Hrg (heregulin)\"]]"
     },
     {
       "id": "54e25eaaae9738404b000017",
       "type": "yesno",
       "question": "Is the protein Papilin secreted?",
-      "generated_answer": "Yes"
+      "generated_answer": "yes"
     },
     {
       "id": "535d292a9a4572de6f000003",
       "type": "yesno",
       "question": "Are long non coding RNAs spliced?",
-      "generated_answer": "No"
+      "generated_answer": "no"
     },
     {
       "id": "55262a9787ecba3764000009",
       "type": "yesno",
       "question": "Is RANKL secreted from the cells?",
-      "generated_answer": "Yes"
+      "generated_answer": "yes"
     },
     {
       "id": "51406e6223fec90375000009",
       "type": "yesno",
       "question": "Does metformin interfere thyroxine absorption?",
-      "generated_answer": "No"
+      "generated_answer": "no"
     },
     {
       "id": "553fa78b1d53b76422000007",
@@ -52,7 +52,7 @@
       "id": "52bf1db603868f1b06000011",
       "type": "yesno",
       "question": "Has Denosumab (Prolia) been approved by FDA?",
-      "generated_answer": "Yes"
+      "generated_answer": "yes"
     },
     {
       "id": "5709e4b2cf1c32585100001c",
@@ -82,7 +82,7 @@
       "id": "53061af558348c0f52000002",
       "type": "list",
       "question": "Which are the major characteristics of cellular senescence?",
-      "generated_answer": "[Presence of senescent cells that no longer multiply nor die off properly, expression of senescence-related markers (SA-\u03b2-Gal staining, p16, p21, and p53 proteins), resistance to premature senescence under typical culture conditions]"
+      "generated_answer": "[Expression of senescence-related markers, including SA-\u03b2-Gal staining, p16, p21, and p53 proteins]"
     },
     {
       "id": "56c1f01def6e394741000045",
@@ -94,19 +94,19 @@
       "id": "5313b049e3eabad021000013",
       "type": "yesno",
       "question": "Is the monoclonal antibody Trastuzumab (Herceptin) of potential use in the treatment of prostate cancer?",
-      "generated_answer": "No"
+      "generated_answer": "no"
     },
     {
       "id": "53137541e3eabad021000010",
       "type": "list",
       "question": "Which are the Yamanaka factors?",
-      "generated_answer": "[\n[\"Octamer binding transcription factor 4\"],\n[\"Sex determining region Y-box 2\"],\n[\"Kruppel-like factor 4\"],\n[\"Myelocytomatosis oncogene\"],\n[\"Nanog homeobox and protein lin-28\"]\n]"
+      "generated_answer": "[[\"octamer binding transcription factor 4\"], [\"sex determining region Y-box 2\"], [\"kruppel-like factor 4\"], [\"myelocytomatosis oncogene\"], [\"Nanog homeobox\"]]"
     },
     {
       "id": "515aa0abd24251bc050000a8",
       "type": "summary",
       "question": "What is the aim of the Human Chromosome-centric Proteome Project (C-HPP)?",
-      "generated_answer": "The aim of the Human Chromosome-centric Proteome Project (C-HPP) is to perfect the annotation of human protein existence by identifying stronger evidence of the expression of missing proteins (MPs) at the protein level. This project is part of the Human Proteome Project (HPP), which aims to identify the protein parts list and integrate proteomics into multiomics studies of human health and disease. The C-HPP focuses on experimental progress on the human proteome parts list across all chromosomes and significant reclassifications to advance our understanding of the human proteome."
+      "generated_answer": "The aim of the Human Chromosome-centric Proteome Project (C-HPP) is to perfect the annotation of human protein existence by identifying stronger evidence of the expression of missing proteins (MPs) at the protein level. This project is part of the broader Human Proteome Project (HPP) initiated in 2010 by the Human Proteome Organization (HUPO), which aims to identify the protein parts list and integrate proteomics into multiomics studies of human health and disease. The C-HPP focuses on advancing the understanding of the human proteome by systematically characterizing proteins across all chromosomes."
     },
     {
       "id": "56af9f130a360a5e45000015",
@@ -124,31 +124,31 @@
       "id": "532f062ad6d3ac6a34000027",
       "type": "summary",
       "question": "What is the effect of ivabradine in heart failure after myocardial infarction?",
-      "generated_answer": "In patients with chronic heart failure and reduced ejection fraction, ivabradine has shown beneficial effects in improving clinical outcomes when added to conventional therapy. Specifically, ivabradine reduces the heart rate by selectively inhibiting the If current. In heart failure with reduced ejection fraction and sinus rhythm, heart rate reduction with ivabradine has been associated with a reduction in the composite incidence of cardiovascular death and heart failure hospitalization. Therefore, ivabradine may be a valuable addition to the management of heart failure after myocardial infarction."
+      "generated_answer": "In patients with chronic heart failure and reduced ejection fraction, ivabradine has shown beneficial effects in improving clinical outcomes when added to conventional therapy. Specifically, in heart failure with reduced ejection fraction and sinus rhythm, heart rate reduction with ivabradine has been associated with a reduction in the composite incidence of cardiovascular death and heart failure hospitalization. The duration of heart failure prior to therapy and its independent effect on outcomes, as well as whether it modifies the effect of heart rate reduction, remain unclear."
     },
     {
       "id": "52bf1b0a03868f1b06000009",
       "type": "factoid",
       "question": "What is the mode of inheritance of Wilson's disease?",
-      "generated_answer": "Autosomal recessive"
+      "generated_answer": "autosomal recessive"
     },
     {
       "id": "517395b98ed59a060a00001a",
       "type": "yesno",
       "question": "Are transcription and splicing connected?",
-      "generated_answer": "Yes"
+      "generated_answer": "yes"
     },
     {
       "id": "52bf19c503868f1b06000001",
       "type": "factoid",
       "question": "What is the mode of inheritance of Facioscapulohumeral muscular dystrophy (FSHD)?",
-      "generated_answer": "Autosomal dominant"
+      "generated_answer": "autosomal dominant"
     },
     {
       "id": "54db1d580f63c58e6e000005",
       "type": "yesno",
       "question": "Is Alu hypomethylation associated with breast cancer?",
-      "generated_answer": "Yes"
+      "generated_answer": "yes"
     },
     {
       "id": "5505edac8e1671127b000005",
@@ -160,7 +160,7 @@
       "id": "5160193d298dcd4e51000039",
       "type": "summary",
       "question": "What is the effect of TRH on myocardial contractility?",
-      "generated_answer": "TRH (thyrotropin-releasing hormone) has been shown to increase myocardial contractility in rats with ischemic cardiomyopathy. Acute intravenous administration of TRH resulted in a significant increase in heart rate, mean arterial pressure, cardiac output, stroke volume, and cardiac contractility. Therefore, TRH can enhance cardiac performance in conditions such as ischemic cardiomyopathy."
+      "generated_answer": "The administration of thyrotropin-releasing hormone (TRH) in rats with ischemic cardiomyopathy led to a significant increase in heart rate, mean arterial pressure, cardiac output, stroke volume, and cardiac contractility. This suggests that TRH has a positive effect on myocardial contractility and cardiac performance in the setting of ischemic cardiomyopathy."
     },
     {
       "id": "56e2cec751531f7e33000015",
@@ -172,13 +172,13 @@
       "id": "515deafd298dcd4e51000025",
       "type": "list",
       "question": "List the endoscopic diagnoses that have been reported in children with autism",
-      "generated_answer": "[Esophagitis, Gastritis, Duodenitis, Gastroesophageal reflux disease (GERD)]"
+      "generated_answer": "[non-esophageal EGIDs]"
     },
     {
       "id": "532624ae600967d132000005",
       "type": "summary",
       "question": "What are the outcomes of Renal sympathetic denervation?",
-      "generated_answer": "Renal sympathetic denervation has been shown to effectively reduce blood pressure in patients with hypertension, both as a standalone treatment and in combination with antihypertensive medications. This innovative procedure helps regulate the renal sympathetic nervous system, leading to improved blood pressure control. Additionally, renal denervation may have potential benefits in reducing the incidence and severity of cardiovascular diseases. Overall, renal sympathetic denervation shows promise in managing hypertension and improving cardiovascular outcomes."
+      "generated_answer": "Renal sympathetic denervation has been shown to effectively reduce blood pressure in patients with hypertension, both when used alone and in combination with antihypertensive medications. This procedure can help regulate the renal sympathetic nervous system, potentially leading to improved control of arterial hypertension. The outcomes of renal denervation include a reduction in blood pressure levels, which can have positive implications for the incidence and severity of cardiovascular diseases."
     },
     {
       "id": "5518e7da622b194345000004",
@@ -190,19 +190,19 @@
       "id": "530a5117970c65fa6b000007",
       "type": "factoid",
       "question": "What is the meaning of the acronym \"TAILS\" used in protein N-terminomics?",
-      "generated_answer": "[TAILS]"
+      "generated_answer": "TAILS stands for \"Terminal Amine Isotopic Labeling of Substrates.\""
     },
     {
       "id": "56bf365eef6e39474100000e",
       "type": "yesno",
       "question": "Do mutations of AKT1 occur in meningiomas?",
-      "generated_answer": "Yes"
+      "generated_answer": "yes"
     },
     {
       "id": "52bf202003868f1b06000018",
       "type": "list",
       "question": "What are the main indications of lacosamide?",
-      "generated_answer": "[[\"Focal impaired awareness seizures\", \"Secondarily generalized seizures in patients with epilepsy \u226516 years of age\"]]"
+      "generated_answer": "[[\"focal impaired awareness seizures\"], [\"secondarily generalized seizures (SGS)\"]]"
     },
     {
       "id": "552fac4fbc4f83e828000006",
@@ -214,13 +214,13 @@
       "id": "56be0da3ef6e394741000007",
       "type": "list",
       "question": "List Hemolytic Uremic Syndrome Triad.",
-      "generated_answer": "[[\"microangiopathic hemolytic anemia\"], [\"thrombocytopenia\"], [\"renal impairment\"]]"
+      "generated_answer": "[[\"microangiopathic hemolytic anemia\"], [\"thrombocytopenia\"], [\"predominant renal impairment\"]]"
     },
     {
       "id": "5158644cd24251bc0500008e",
       "type": "yesno",
       "question": "Does physical activity influence gut hormones?",
-      "generated_answer": "Yes"
+      "generated_answer": "yes"
     },
     {
       "id": "515a7ffdd24251bc050000a5",
@@ -244,67 +244,67 @@
       "id": "54f08d4a94afd61504000016",
       "type": "yesno",
       "question": "Is irritable bowel syndrome more common in women with endometriosis?",
-      "generated_answer": "No"
+      "generated_answer": "yes"
     },
     {
       "id": "54f49995d0d681a040000002",
       "type": "summary",
       "question": "What is evaluated using the EORTC QLQ \u2013 INFO25 questionnaire?",
-      "generated_answer": "The EORTC QLQ-INFO25 questionnaire is used to evaluate how cancer patients perceive the information they receive. It assesses various aspects such as satisfaction with information, perception of helpfulness, information about services and places of care, and information on self-help strategies. The questionnaire has shown convergent validity with other related questionnaires and has been used to discriminate among groups based on factors like gender, age, education, anxiety levels, treatment line, and satisfaction. Studies have shown changes in specific scales/items of the questionnaire over the course of treatment, indicating its sensitivity to changes in information provision."
+      "generated_answer": "The EORTC QLQ-INFO25 questionnaire is used to evaluate how cancer patients perceive the information provided to them. It assesses various aspects such as satisfaction with information, perceived helpfulness of information, and specific information needs. The questionnaire has shown convergent validity with other related questionnaires and has been found to discriminate among different groups based on various factors such as gender, age, education, anxiety levels, and treatment line. Changes in scores over time indicate shifts in patients' perception of the information received."
     },
     {
       "id": "531d2aa5267d7dd053000003",
       "type": "yesno",
       "question": "Does BNP increase after intensive exercise in athletes?",
-      "generated_answer": "Yes"
+      "generated_answer": "yes"
     },
     {
       "id": "56bf3a79ef6e39474100000f",
       "type": "summary",
       "question": "What is the association of estrogen replacement therapy and intracranial meningioma risk?",
-      "generated_answer": "The association between estrogen replacement therapy (ERT) and intracranial meningioma risk is not definitive. Some studies suggest a potential link between hormone replacement therapy (HRT) and an increased risk of meningioma in women, while others have not found a significant association. Overall, the evidence remains inconclusive, and more research is needed to establish a clear relationship between ERT and meningioma risk."
+      "generated_answer": "The association between estrogen replacement therapy (ERT) and intracranial meningioma risk is not definitive. Some studies suggest an increased risk of meningiomas with hormone replacement therapy in menopausal patients, while others have failed to show a clear association. Overall, there is no consensus on the relationship between hormone replacement therapy and meningioma risk based on the available evidence."
     },
     {
       "id": "54fefff26ad7dcbc1200000b",
       "type": "yesno",
       "question": "Are there web based self management strategies for chronic pain ?",
-      "generated_answer": "Yes"
+      "generated_answer": "yes"
     },
     {
       "id": "571f34ac0fd6f91b68000005",
       "type": "yesno",
       "question": "Is Weaver syndrome similar to Sotos?",
-      "generated_answer": "No"
+      "generated_answer": "no"
     },
     {
       "id": "54e0d1491388e8454a000014",
       "type": "factoid",
       "question": "Which enzyme is targeted by Evolocumab?",
-      "generated_answer": "[LDL receptor]"
+      "generated_answer": "[Low-Density Lipoprotein Cholesterol (LDL-C)]"
     },
     {
       "id": "553a8d78f321868558000003",
       "type": "yesno",
       "question": "Are ultraconserved elements often transcribed?",
-      "generated_answer": "Yes"
+      "generated_answer": "yes"
     },
     {
       "id": "51404dd723fec90375000002",
       "type": "factoid",
       "question": "What is the methyl donor of DNA (cytosine-5)-methyltransferases?",
-      "generated_answer": "S-adenosyl methionine (SAM)"
+      "generated_answer": "[S-adenosyl methionine]"
     },
     {
       "id": "552fa6f5bc4f83e828000002",
       "type": "yesno",
       "question": "Is peripheral neuroepithelioma related to Ewing sarcoma?",
-      "generated_answer": "Yes"
+      "generated_answer": "yes"
     },
     {
       "id": "56d0451c3975bb303a00000e",
       "type": "factoid",
       "question": "Which signaling pathway does sonidegib inhibit?",
-      "generated_answer": "['HH signaling pathway']"
+      "generated_answer": "[\"Hedgehog (HH) signaling pathway\"]"
     },
     {
       "id": "54ede8c594afd61504000009",
@@ -316,7 +316,7 @@
       "id": "56c3327c50c68dd41600000c",
       "type": "list",
       "question": "Which DNA sequences are more prone for the formation of R-loops?",
-      "generated_answer": "[\n[\"G-rich sequences in the non-template strand\"]\n]"
+      "generated_answer": "[[\"G-rich sequences in the non-template strand\"]]"
     },
     {
       "id": "551c23bc6b348bb82c00000b",
@@ -328,13 +328,13 @@
       "id": "5314a7a4dae131f847000003",
       "type": "list",
       "question": "which mutations of troponin C gene have been found to cause hypertrophic cardiomyopathy?",
-      "generated_answer": "[[\"TnC-A8V mutation\"], [\"novel mutations in TNNC1-encoded troponin C\"]]"
+      "generated_answer": "[[\"TnC-A8V mutation\"], [\"novel hypertrophic cardiomyopathy susceptibility mutations in TNNC1-encoded troponin C\"]]"
     },
     {
       "id": "535d78137d100faa09000005",
       "type": "summary",
       "question": "What is known about the effect of acupuncture in smoking cessation ?",
-      "generated_answer": "Acupuncture, particularly when combined with auricular acupressure, has shown promise as an alternative treatment for smoking cessation. However, studies have reported mixed results, with some indicating no significant impact on smoking cessation rates. More rigorous randomized controlled studies are needed to further evaluate the efficacy and safety of acupuncture in smoking cessation."
+      "generated_answer": "Acupuncture, particularly when combined with auricular acupressure, has shown promise as an alternative treatment for smoking cessation. However, there is a need for more rigorous randomized controlled studies to evaluate its efficacy specifically for smoking cessation. Current evidence suggests that acupuncture with different frequencies may not have a significant impact on smoking cessation rates. Further research is required to determine the effectiveness and safety of acupuncture, possibly in combination with other interventions such as nicotine patches, for individuals looking to quit smoking."
     },
     {
       "id": "56c6dd275795f9a73e000008",
@@ -346,31 +346,523 @@
       "id": "56c1f02cef6e39474100004c",
       "type": "factoid",
       "question": "GV1001 vaccine targets which enzyme?",
-      "generated_answer": "Telomerase"
+      "generated_answer": "telomerase"
     },
     {
       "id": "550af222c2af5d5b7000000b",
       "type": "factoid",
       "question": "Which is the E3 ubiquitin ligase which ubiquitinates IkB leading to its proteasomal degradation?",
-      "generated_answer": "[SCF(\u03b2-TrCP)]"
+      "generated_answer": "SCFHOS-Roc1"
     },
     {
       "id": "5318a955b166e2b806000020",
       "type": "yesno",
       "question": "Is c-met involved in the activation of the Akt pathway?",
-      "generated_answer": "Yes"
+      "generated_answer": "yes"
     },
     {
       "id": "531a3fe3b166e2b806000038",
       "type": "yesno",
       "question": "Is pregnancy an additional risk during during H1N1 infection?",
-      "generated_answer": "Yes"
+      "generated_answer": "yes"
     },
     {
       "id": "51757bbb8ed59a060a00002e",
       "type": "yesno",
       "question": "Are long non coding RNAs as conserved in sequence as protein coding genes?",
-      "generated_answer": "No"
+      "generated_answer": "no"
+    },
+    {
+      "id": "56c1f03bef6e394741000053",
+      "type": "factoid",
+      "question": "Mutation of which gene is implicated in the Brain-lung-thyroid syndrome?",
+      "generated_answer": "[NKX2.1]"
+    },
+    {
+      "id": "52d946c798d023950500000a",
+      "type": "summary",
+      "question": "What is clathrin?",
+      "generated_answer": "Clathrin is a protein involved in clathrin-mediated endocytosis, a process where cells take in molecules by engulfing them in vesicles formed by clathrin-coated pits on the cell membrane. Clathrin plays a crucial role in various cellular processes, including viral infection and regulation of protein transport. It interacts with adaptor complexes like AP1 and AP2, which are involved in membrane trafficking. Additionally, clathrin-mediated endocytosis can be regulated by factors like AAK1, dopamine transporter substrates, and protein kinase C-dependent ubiquitination."
+    },
+    {
+      "id": "5322d9339b2d7acc7e000011",
+      "type": "summary",
+      "question": "What are the main results of PRKAR1A Knockdown?",
+      "generated_answer": "The main results of PRKAR1A knockdown include enhanced tumor cell proliferation and migration in A549 cells, as well as increased efficacy of conventional cholangiocarcinoma (CCA) chemotherapeutic treatment. Conversely, re-expression of PRKAR1A in H1299 cells led to suppression of tumor cell proliferation and migration. These findings suggest that targeting PRKAR1A/PKA signaling pathway may have implications for CCA treatment."
+    },
+    {
+      "id": "535d75ab7d100faa09000004",
+      "type": "yesno",
+      "question": "Is TENS machine effective in pain?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "56d1d14567f0cb3d66000003",
+      "type": "yesno",
+      "question": "Is there any algorithm for enhancer identification from chromatin state?",
+      "generated_answer": "no"
+    },
+    {
+      "id": "532498959b2d7acc7e000017",
+      "type": "factoid",
+      "question": "Which enzyme is targeted by the drug Imetelstat?",
+      "generated_answer": "NRAS"
+    },
+    {
+      "id": "56c1f005ef6e39474100003a",
+      "type": "list",
+      "question": "Which interleukins are inhibited by Dupilumab?",
+      "generated_answer": "[[\"IL-4\"], [\"IL-13\"]]"
+    },
+    {
+      "id": "513ce3c8bee46bd34c000008",
+      "type": "list",
+      "question": "Which human genes are more commonly related to craniosynostosis?",
+      "generated_answer": "[[\"BMP2\"], [\"LINC01428\"]]"
+    },
+    {
+      "id": "553f78c7ab98a37113000008",
+      "type": "yesno",
+      "question": "Are transcribed ultraconserved regions involved in cancer?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "56d06e043975bb303a000011",
+      "type": "factoid",
+      "question": "In which breast cancer patients can palbociclib be used?",
+      "generated_answer": "[\"metastatic breast cancer patients\"]"
+    },
+    {
+      "id": "56d8b27651531f7e33000003",
+      "type": "yesno",
+      "question": "Do patients with Pendred syndrome present congenital deafness?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "571e1e11bb137a4b0c000004",
+      "type": "list",
+      "question": "List side effects of SGLT2 inhibitors?",
+      "generated_answer": "[[\"normoglycemic ketoacidosis\"], [\"Fournier's gangrene\"]]"
+    },
+    {
+      "id": "552fa32fbc4f83e828000001",
+      "type": "yesno",
+      "question": "Is CD56 useful in Ewing sarcoma prognosis?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "5509f433c2af5d5b70000008",
+      "type": "factoid",
+      "question": "What is the method FASP used for?",
+      "generated_answer": "filter-aided sample preparation (FASP) is used for proteomic analysis."
+    },
+    {
+      "id": "553fa2201d53b76422000005",
+      "type": "summary",
+      "question": "What is the role of extracellular signal-related kinases 1 and 2 (ERK1/2) proteins in craniosynostosis?",
+      "generated_answer": "Extracellular signal-related kinases 1 and 2 (ERK1/2) proteins play a crucial role in craniosynostosis by regulating osteogenesis. Reduced dosage of ERF, a regulator of ERK1/2 signaling, has been linked to complex craniosynostosis in both humans and mice. This association highlights the significance of ERK1/2 signaling in the molecular pathophysiological mechanisms underlying craniosynostosis."
+    },
+    {
+      "id": "52fa73c62059c6d71c000058",
+      "type": "yesno",
+      "question": "Are there any urine biomarkers for chronic kidney disease?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "533f9df0c45e133714000016",
+      "type": "list",
+      "question": "What is being measured with an accelerometer in back pain patients",
+      "generated_answer": "[[\"physical activity measures\"]]"
+    },
+    {
+      "id": "56a3a386496b62f23f000007",
+      "type": "list",
+      "question": "List the releases of JASPAR database",
+      "generated_answer": "[[\"third major release\"], [\"fourth major release\"], [\"fifth major release\"], [\"2018 release\"]]"
+    },
+    {
+      "id": "56c1f038ef6e394741000051",
+      "type": "list",
+      "question": "List symptoms of the IFAP syndrome.",
+      "generated_answer": "[[\"alopecia universalis\"], [\"severe photophobia\"], [\"follicular ichthyosis\"]]"
+    },
+    {
+      "id": "531a34d5b166e2b806000036",
+      "type": "factoid",
+      "question": "Which gene is required for the efficient function of clopidogrel?",
+      "generated_answer": "[CYP2C19]"
+    },
+    {
+      "id": "56c1f029ef6e39474100004a",
+      "type": "yesno",
+      "question": "Is valproic acid effective for glioblastoma treatment?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "56cdf40d5795f9a73e00003d",
+      "type": "factoid",
+      "question": "Which transcription factor is considered as a master regulator of lysosomal genes?",
+      "generated_answer": "[Transcription factor EB (TFEB)]"
+    },
+    {
+      "id": "571529efcb4ef8864c000001",
+      "type": "list",
+      "question": "Which antibiotics target peptidoglycan biosynthesis?",
+      "generated_answer": "[Undecaprenyl phosphate, C lysins, MltG, Penicillin-binding proteins (PBPs)]"
+    },
+    {
+      "id": "52b2ec744003448f55000001",
+      "type": "yesno",
+      "question": "Can Levoxyl (levothyroxine sodium) cause insomnia?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "530e42e65937551c09000007",
+      "type": "yesno",
+      "question": "Is fatigue prevalent in patients receiving treatment for glioblastoma?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "53358cd2d6d3ac6a3400004e",
+      "type": "list",
+      "question": "List two common features of Tay syndrome.",
+      "generated_answer": "[[\"Dystonia syndromes\"], [\"Monogenic cause\"]]"
+    },
+    {
+      "id": "52b2d405f828ad283c000009",
+      "type": "list",
+      "question": "Which cell types are known to be driving Rheumatoid Arthritis?",
+      "generated_answer": "[Neutrophils]"
+    },
+    {
+      "id": "550324d7e9bde6963400002f",
+      "type": "summary",
+      "question": "What is the association between personality trait of neuroticism and risk for Alzheimer's disease?",
+      "generated_answer": "Higher neuroticism and lower conscientiousness have been identified as risk factors for Alzheimer's disease and related dementias. Personality traits, particularly neuroticism, have been associated with the risk of dementia and Alzheimer's disease neuropathology. However, the underlying neuropathological correlates of these associations remain unclear. Studies suggest that neuroticism and depression, which share genetic overlap, are risk factors for the development of aging-related neurocognitive decline and Alzheimer's disease."
+    },
+    {
+      "id": "52f125332059c6d71c000007",
+      "type": "summary",
+      "question": "What is the mode of action of everolimus?",
+      "generated_answer": "The mode of action of everolimus involves the selective inhibition of the mammalian target of rapamycin (mTOR) pathway. This inhibition leads to suppression of cellular respiration and induction of apoptosis, particularly affecting the thymus. Everolimus is known for its concentration-controlled effects and is often used in combination with reduced dose calcineurin inhibitors. While the exact mechanism of action of everolimus in bone biology is not fully understood, clinical trial data suggest effects on bone metabolism."
+    },
+    {
+      "id": "5158a5b8d24251bc05000097",
+      "type": "yesno",
+      "question": "Have Quantitative Trait Loci affecting splicing (splicing QTLs) been linked to disease?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "553653a5bc4f83e828000007",
+      "type": "factoid",
+      "question": "Which technique is used for detection of EWS/FLI1 fusion transcripts?",
+      "generated_answer": "RT-PCR"
+    },
+    {
+      "id": "5344310baeec6fbd0700000c",
+      "type": "yesno",
+      "question": "Does the CTCF protein co-localize with cohesin?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "56c868a95795f9a73e000017",
+      "type": "factoid",
+      "question": "What is the application of the Bimolecular Fluorescence Complementation (BiFC) assay in Drosophila embryos?",
+      "generated_answer": "The application of the Bimolecular Fluorescence Complementation (BiFC) assay in Drosophila embryos is in the analysis of different types of protein-protein interactions (PPIs)."
+    },
+    {
+      "id": "54dcb29dc0bb8dce23000004",
+      "type": "summary",
+      "question": "Which pathological condition of the heart is known as hypertrophic cardiomyopathy (HCM)?",
+      "generated_answer": "Hypertrophic cardiomyopathy (HCM) is a genetic heart disease characterized by the thickening of the heart muscle. It is a genetically heterogenous condition, with about half of cases having a genetic cause. HCM can lead to symptoms such as chest pain, shortness of breath, and an increased risk of sudden cardiac death. Yamaguchi syndrome, also known as apical hypertrophic cardiomyopathy, is a variant that specifically affects the apical region of the left ventricle. Impaired myocardial blood flow without epicardial coronary disease is a feature of HCM."
+    },
+    {
+      "id": "516e5f41298dcd4e5100007f",
+      "type": "factoid",
+      "question": "What is the genetic basis of Rubinstein-Taybi syndrome?",
+      "generated_answer": "The genetic basis of Rubinstein-Taybi syndrome is primarily due to private mutations in CREBBP (approximately 55% of cases) or EP300 (approximately 8% of cases)."
+    },
+    {
+      "id": "511a51331159fa8212000009",
+      "type": "summary",
+      "question": "What is the function of the viral KP4 protein?",
+      "generated_answer": "The viral KP4 protein acts reversibly on the cell membrane and inhibits cell division without killing the cells. It is suggested that KP4 binds competitively with calcium to the channel exterior. The function of KP4 is distinct from the KP6 protein and no KP4-like proteins have been functionally characterized yet."
+    },
+    {
+      "id": "56ed27012ac5ed145900000b",
+      "type": "factoid",
+      "question": "What is the function of the AIRE gene at the embryonic stage?",
+      "generated_answer": "self-renewal of embryonic stem cells"
+    },
+    {
+      "id": "533c388dc45e133714000008",
+      "type": "summary",
+      "question": "What is the principle of the PAR-CLIP methodology?",
+      "generated_answer": "The principle of the PAR-CLIP methodology involves crosslinking RNA-binding proteins (RBPs) to their target RNAs in vivo using UV light, followed by stringent purification to isolate the protein-RNA complexes. By incorporating modified nucleotides into the RNA, such as 4-thiouridine, precise crosslinking sites can be identified at the single-nucleotide level. This technique allows for the comprehensive identification of RBP targets and their binding sites, facilitating the study of RBP-regulatory networks and signaling pathways."
+    },
+    {
+      "id": "56c3323a50c68dd416000009",
+      "type": "summary",
+      "question": "How is spastic diplegia diagnosed?",
+      "generated_answer": "Spastic diplegia, a form of cerebral palsy (CP), is typically diagnosed based on clinical assessment, including physical examination, developmental history, and possibly neuroimaging studies. The diagnosis is made by observing signs of increased muscle tone and stiffness, particularly in the legs, as well as motor impairments affecting movement and coordination. Additional tests may be conducted to rule out other conditions and to assess the severity and extent of the spasticity.\n\nIn clinical practice, the diagnosis of spastic diplegia often involves a multidisciplinary approach, including input from pediatricians, neurologists, physical therapists, and other healthcare professionals. The use of standardized classification systems, such as the Gross Motor Function Classification System (GMFCS), can help categorize the severity of motor impairments in individuals with CP.\n\nIt is important to note that while the snippets provide insights into various treatment modalities for spastic CP, they do not specifically address the diagnostic process for spastic diplegia. Diagnosis of spastic diplegia is primarily based on clinical evaluation and assessment of motor function and spasticity in individuals suspected of having CP."
+    },
+    {
+      "id": "52f223e02059c6d71c00000e",
+      "type": "factoid",
+      "question": "Which is the genetic defect causing Neurofibromatosis type 1?",
+      "generated_answer": "NF1 gene"
+    },
+    {
+      "id": "56a39d60496b62f23f000006",
+      "type": "factoid",
+      "question": "Which package is available for analysing genomic interactions in R/Bioconductor?",
+      "generated_answer": "[PrInCE]"
+    },
+    {
+      "id": "5150b807d24251bc05000072",
+      "type": "factoid",
+      "question": "How many clinical trials for off-label drugs in neonates are cited in the literature.",
+      "generated_answer": "Fourteen studies."
+    },
+    {
+      "id": "56c81fd15795f9a73e00000c",
+      "type": "yesno",
+      "question": "Are stress granules involved in the pathogenesis of Amyotrophic Lateral Sclerosis?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "52f5083d2059c6d71c00001e",
+      "type": "yesno",
+      "question": "Does TGF-beta play a role in cardiac regeneration after myocardial infarction?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "56cf413f3975bb303a000009",
+      "type": "summary",
+      "question": "Is there a genetic component for happiness?",
+      "generated_answer": "Yes, there is evidence to suggest that there is a genetic component to happiness. Studies have shown that happiness and subjective wellbeing have a substantial genetic correlation, with a SNP-heritability of about 8.6%. Genetic factors contribute between 13.5% and 39% to individual differences in happiness, with affect evaluation showing a particularly strong heritability component. Common genetic factors have been found to contribute to wellbeing and its subcomponents like satisfaction with life and quality of life."
+    },
+    {
+      "id": "5140569623fec90375000003",
+      "type": "summary",
+      "question": "What kind of affinity purification would you use in order to isolate soluble lysosomal proteins?",
+      "generated_answer": "To isolate soluble lysosomal proteins, you would use affinity purification with an affinity support bearing mannose-6-phosphate receptor. Soluble lysosomal proteins are characterized by the presence of mannose-6-phosphate, making this affinity purification method effective for their isolation. This method allows for the purification of over sixty different soluble lysosomal hydrolases and accessory proteins. Deficiencies in these proteins can result in various human genetic diseases."
+    },
+    {
+      "id": "552faa43bc4f83e828000004",
+      "type": "list",
+      "question": "Which are the genes thought to be regulated by EWS/FLI?",
+      "generated_answer": "[[\"migratory genes\"], [\"neurodevelopmental genes\"]]"
+    },
+    {
+      "id": "52fe58f82059c6d71c00007a",
+      "type": "factoid",
+      "question": "Do archaeal genomes contain one or multiple origins of replication?",
+      "generated_answer": "multiple origins of replication"
+    },
+    {
+      "id": "533c3af6c45e13371400000d",
+      "type": "list",
+      "question": "Which pathological conditions are caused by mutations in the CYLD gene?",
+      "generated_answer": "[[\"cylindromas\"]]"
+    },
+    {
+      "id": "56c5fd325795f9a73e000005",
+      "type": "factoid",
+      "question": "Which is the genetic basis of Spinal Muscular Atrophy (SMA)?",
+      "generated_answer": "SMN1 gene"
+    },
+    {
+      "id": "571f3b320fd6f91b68000007",
+      "type": "list",
+      "question": "Which are the common symptoms of Cushing's syndrome?",
+      "generated_answer": "[Excess glucocorticoids, cognitive decline, glaucoma, MACS, primary bilateral macronodular adrenal hyperplasia]"
+    },
+    {
+      "id": "5319ac99b166e2b806000034",
+      "type": "factoid",
+      "question": "Which is the third subunit of the TSC1-TSC2 complex upstream of mTORC1?",
+      "generated_answer": "[TBC1D7]"
+    },
+    {
+      "id": "54f89e1a06d9727f76000001",
+      "type": "factoid",
+      "question": "Which kinase is inhibited by the small molecule KN-93?",
+      "generated_answer": "[CaMKIV]"
+    },
+    {
+      "id": "5357bd56f1005d6b58000009",
+      "type": "summary",
+      "question": "What is the effect of Chk2 splice variants on wild-type Chk2 kinase activity?",
+      "generated_answer": "Chk2 splice variants, such as S1455R, N1650S, and H1380Y, have been shown to exert a dominant-negative effect on wild-type Chk2 kinase activity. These variants lead to defective ATM-mediated p53 phosphorylation, impaired Chk2 activation, and hindered c-Abl activation after X-irradiation. Consequently, the presence of these Chk2 splice variants can disrupt the normal function of wild-type Chk2 kinase activity."
+    },
+    {
+      "id": "54d65b6b3706e8952800000c",
+      "type": "list",
+      "question": "List genes that have been found mutated in CMT1A (Charcot-Marie-Tooth disease type 1 A).",
+      "generated_answer": "[[\"PMP22\"], [\"MPZ\"], [\"GJB1\"]]"
+    },
+    {
+      "id": "517a8c918ed59a060a000043",
+      "type": "list",
+      "question": "Which viruses are best known to cause myocarditis?",
+      "generated_answer": "[[\"Coxsackie A virus\"], [\"parvovirus B19 (B19V)\"], [\"rhinovirus\"], [\"SARS-CoV-2\"]]"
+    },
+    {
+      "id": "571f2b5bbb137a4b0c000010",
+      "type": "list",
+      "question": "Which genes have been associated with Cerebral Cavernous Malformation?",
+      "generated_answer": "[[\"KRIT1\"], [\"CCM2\"], [\"PDCD10\"]]"
+    },
+    {
+      "id": "52fb4b462059c6d71c00005f",
+      "type": "yesno",
+      "question": "Is DITPA a thyroid hormone analog utilized in experimental and clinical studies",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "56c1d848ef6e39474100002f",
+      "type": "summary",
+      "question": "What is Tarlov Cyst?",
+      "generated_answer": "Tarlov cysts are rare perineural cysts found adjacent to the spinal cord. They are typically asymptomatic and are often discovered incidentally on imaging studies. Surgical treatment may be considered in cases where the cyst is symptomatic. Limited data is available on the clinical findings and incidence of Tarlov cysts, particularly in pediatric patients. Treatment approaches should be tailored based on individual patient characteristics and symptoms."
+    },
+    {
+      "id": "571e275dbb137a4b0c000005",
+      "type": "factoid",
+      "question": "What are 'vildagliptin', 'sitagliptin', 'saxagliptin', 'alogliptin', 'linagliptin', and 'dutogliptin'?",
+      "generated_answer": "[['vildagliptin'], ['sitagliptin'], ['saxagliptin'], ['alogliptin'], ['linagliptin'], ['dutogliptin']]"
+    },
+    {
+      "id": "5168023b298dcd4e51000061",
+      "type": "yesno",
+      "question": "Is MammaPrint cleared by the United States Food and Drug Administration? ",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "56e857ae42442bac75000004",
+      "type": "factoid",
+      "question": "What is needed for MMP proteins to be functional?",
+      "generated_answer": "oxidative stress"
+    },
+    {
+      "id": "5509c52f1180f13250000004",
+      "type": "factoid",
+      "question": "What is hyperosmia",
+      "generated_answer": "Hyperosmia is an increased sensitivity to smell."
+    },
+    {
+      "id": "535d2cf09a4572de6f000004",
+      "type": "factoid",
+      "question": "What is the number of long non coding RNAs in the human genome",
+      "generated_answer": "more than 90%"
+    },
+    {
+      "id": "55475dc2f35db75526000001",
+      "type": "factoid",
+      "question": "Which is the most known bacterium responsible for botulism (sausage-poisoning)?",
+      "generated_answer": "Clostridium botulinum"
+    },
+    {
+      "id": "56c073fcef6e394741000020",
+      "type": "factoid",
+      "question": "What is the association of spermidine with \u03b1-synuclein neurotoxicity?",
+      "generated_answer": "prevents"
+    },
+    {
+      "id": "550320cbe9bde6963400002d",
+      "type": "list",
+      "question": "List symptoms of 4H leukodystrophy.",
+      "generated_answer": "[[\"None provided in the given text.\"]]"
+    },
+    {
+      "id": "53312464d6d3ac6a3400003a",
+      "type": "summary",
+      "question": "What is the extracellular core \"matrisome\"?",
+      "generated_answer": "The extracellular core \"matrisome\" refers to the essential components of the extracellular matrix (ECM), including collagens, ECM glycoproteins, and proteoglycans. These core matrisome proteins play a crucial role in maintaining tissue structure and function. Excessive deposition and cross-linking of core matrisome components can lead to abnormal ECM remodeling, contributing to conditions like liver fibrosis. Different cell types express core matrisome genes, with fibroblasts being a key contributor. Variation in matrisome protein expression can be influenced by factors such as age and tissue collection technique."
+    },
+    {
+      "id": "511a4d391159fa8212000003",
+      "type": "list",
+      "question": "Which are the plant DNA (cytosine-5) methyltransferase families?",
+      "generated_answer": "[[\"MET\"], [\"CMT\"], [\"DRM\"]]"
+    },
+    {
+      "id": "52fe52702059c6d71c000078",
+      "type": "factoid",
+      "question": "Where is the histone variant CENPA preferentially localized?",
+      "generated_answer": "Centromeres"
+    },
+    {
+      "id": "517137c18ed59a060a000001",
+      "type": "list",
+      "question": "In which proteins is the chromodomain present?",
+      "generated_answer": "[[\"CHD7\"], [\"CHD4\"], [\"CHD8\"]]"
+    },
+    {
+      "id": "56b3efc38525abca1e000006",
+      "type": "summary",
+      "question": "What is Genomicus?",
+      "generated_answer": "Genomicus is a database and web-server that focuses on comparative genomics in eukaryotes. It allows for easy visualization of genomic data in over 150 eukaryote genomes, including reconstructed ancestral gene organization. The tool is available online for free use and data can be downloaded from the provided FTP link. Genomicus is particularly useful for interpreting genomic data across different eukaryotic species."
+    },
+    {
+      "id": "56ae35bc0a360a5e45000007",
+      "type": "summary",
+      "question": "What is the COUGER tool?",
+      "generated_answer": "The COUGER tool is a software that can be used as a stand-alone tool or through a web interface provided at http://couger.oit.duke.edu. It offers the original 315 images along with a script for data augmentation, enabling users to generate their own augmented data for more sustainable and customizable options. Additionally, it has been used for de novo assembly to produce a complete genome for a non-resistant strain and a nearly complete assembly for a drug-resistant strain."
+    },
+    {
+      "id": "532083389b2d7acc7e000003",
+      "type": "list",
+      "question": "Are there drugs for Tick-borne Encephalitis?",
+      "generated_answer": "[[\"Inactivated tick-borne encephalitis vaccine virus\"]]"
+    },
+    {
+      "id": "571e3d42bb137a4b0c000007",
+      "type": "yesno",
+      "question": "Is SLC22A3 expressed in the brain?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "53386282d6d3ac6a3400005a",
+      "type": "yesno",
+      "question": "Has the protein TIEG1 been associated with apoptosis?",
+      "generated_answer": "yes"
+    },
+    {
+      "id": "5717d64f29809bbe7a000001",
+      "type": "factoid",
+      "question": "Which is the cellular localization of the protein Opa1?",
+      "generated_answer": "Mitochondria."
+    },
+    {
+      "id": "531d7430267d7dd053000008",
+      "type": "list",
+      "question": "Which are the drugs utilized for the burning mouth syndrome?",
+      "generated_answer": "[Clonazepam]"
+    },
+    {
+      "id": "55031650e9bde69634000026",
+      "type": "yesno",
+      "question": "Is PTEN involved in follicular thyroid carcinoma?",
+      "generated_answer": "no"
+    },
+    {
+      "id": "56c8f4615795f9a73e00001a",
+      "type": "factoid",
+      "question": "Which genome browser database for DNA shape annotations is available?",
+      "generated_answer": "GBshape"
+    },
+    {
+      "id": "54fc97b86ad7dcbc12000002",
+      "type": "summary",
+      "question": "What is known about clinical efficacy of ceftriaxone for treatment of amyotrophic lateral sclerosis?",
+      "generated_answer": "Ceftriaxone has been studied in the treatment of amyotrophic lateral sclerosis (ALS) in both preclinical and clinical trials. A multi-stage, randomized, double-blind, placebo-controlled trial has been conducted to assess the safety and efficacy of ceftriaxone for ALS. Additionally, quantitative strength testing using hand-held dynamometry (HHD) has been employed as an efficacy measure in large phase 3 ALS trials involving ceftriaxone. Other agents like minocycline, ONO-2506, and IGF-1 polypeptide are also being studied in phase III trials for ALS treatment. Overall, there is ongoing research into the potential efficacy of ceftriaxone and other agents in the treatment of ALS, but definitive conclusions on its clinical efficacy are still pending."
+    },
+    {
+      "id": "56ccae765795f9a73e000035",
+      "type": "summary",
+      "question": "What is the relationship between TailorX and Oncotype?",
+      "generated_answer": "The relationship between TailorX and Oncotype DX (ODX) lies in risk categorization based on ODX Recurrence Scores (RS). In both TailorX and ODX, patients are classified into high-risk (RS > 25) and low-risk (RS \u2264 25) groups. Results from studies like TailorX aim to clarify discrepancies in treatment recommendations based on ODX RS. Interestingly, a study found no association between high ODX RS and circulating tumor cells or disseminated tumor cells in certain patient subgroups. This suggests that ODX RS may not correlate with the presence of these cells."
     }
   ]
 }

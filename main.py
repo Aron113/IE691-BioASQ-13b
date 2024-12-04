@@ -111,7 +111,7 @@ def run_advanced(file_path):
         eval_results = evaluation_utils.calc_precision(top10_articles, question_ideal_articles, file_path)
         print(f"Precision@10 for Question {question_id}: {eval_results}")
 
-        total_precision += eval_results["query"]["P.10"]
+        total_precision += eval_results["query"]["P_10"]
         average_precision = total_precision / num_qns
         print(f"Average Precision: {average_precision} , Number of Questions: {num_qns}")
 
@@ -149,6 +149,7 @@ def run_advanced(file_path):
     # Save results for advanced pipeline
     save_results(results, output_file="advanced_results.json")
     phase_b_evaluation = evaluation_utils.evaluate_generated_ideal_answers(results, file_path)
+    print(f"Average Precision: {average_precision} , Number of Questions: {num_qns}")
     print(f"Phase B Evaluation: {phase_b_evaluation}")
 
     phase_b_exact_evaluation = evaluation_utils.evaluate_generated_exact_answers(exact_results, file_path)

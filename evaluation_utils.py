@@ -105,11 +105,11 @@ def evaluate_generated_exact_answers(generated_data, training_data_path):
         training_exact_answer = training_exact_answers.get(question_id, "")[0]
         
         # ROUGE scores
-        print(training_exact_answer)
-        print(generated_exact_answer)
         if training_exact_answer == generated_exact_answer:
             numerator += 1
         denominator += 1
     
     if not denominator:
         return 0
+    
+    return numerator/denominator
